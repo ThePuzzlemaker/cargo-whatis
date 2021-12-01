@@ -9,7 +9,7 @@ repository = "https://github.com/ThePuzzlemaker/cargo-whatis.git"
 homepage = "https://github.com/ThePuzzlemaker/cargo-whatis"
 license = "MIT"
 keywords = ["cargo", "crates-io", "development-tools", "cargo-plugins"]
-categories = ["deelopment-tools::cargo-plugins", "command-line-utilities"]
+categories = ["development-tools::cargo-plugins", "command-line-utilities"]
 
 [dependencies]
 clap = "2.34.0"
