@@ -138,7 +138,7 @@ fn main() -> anyhow::Result<()> {
     );
 
     if show_deps {
-        println!("\n # Dependencies:\n");
+        println!("\n# Dependencies:\n");
         for pkg in pkgset.packages() {
             if pkg.package_id() == main_pkgid {
                 continue;
