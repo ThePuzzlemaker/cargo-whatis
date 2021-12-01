@@ -1,0 +1,17 @@
+[package]
+name = "cargo-whatis"
+version = "0.1.0"
+edition = "2021"
+authors = ["ThePuzzlemaker <tpzker@thepuzzlemaker.info>"]
+description = "Quickly show the description of a crate on crates.io"
+readme = "README.md"
+repository = "https://github.com/ThePuzzlemaker/cargo-whatis.git"
+homepage = "https://github.com/ThePuzzlemaker/cargo-whatis"
+license = "MIT"
+keywords = ["cargo", "crates-io", "development-tools", "cargo-plugins"]
+categories = ["deelopment-tools::cargo-plugins", "command-line-utilities"]
+
+[dependencies]
+clap = "2.34.0"
+cargo = "0.57.0"
+anyhow = "1.0.51"
