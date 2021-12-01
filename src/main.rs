@@ -137,22 +137,24 @@ fn main() -> anyhow::Result<()> {
             .trim_end()
     );
 
-    println!("\n # Dependencies:\n");
-    for pkg in pkgset.packages() {
-        if pkg.package_id() == main_pkgid {
-            continue;
+    if show_deps {
+        println!("\n # Dependencies:\n");
+        for pkg in pkgset.packages() {
+            if pkg.package_id() == main_pkgid {
+                continue;
+            }
+            println!(
+                "- {} @ {}: {}",
+                pkg.manifest().name(),
+                pkg.version(),
+                pkg.manifest()
+                    .metadata()
+                    .description
+                    .as_deref()
+                    .unwrap_or("No description provided.")
+                    .trim_end()
+            )
         }
-        println!(
-            "- {} @ {}: {}",
-            pkg.manifest().name(),
-            pkg.version(),
-            pkg.manifest()
-                .metadata()
-                .description
-                .as_deref()
-                .unwrap_or("No description provided.")
-                .trim_end()
-        )
     }
     // TODO: Maybe find a way to only download the manifest, or delete crates downloaded afterwards to save space
     // TODO: Maybe add an option to parse a manifest and show the description of all its dependencies
